@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+
+        <style>
+            body {
+                color:#fff;
+                padding: 0;
+                margin: 0;
+                font-family: 'Montserrat', sans-serif;
+                background-size: cover;
+                background-repeat: no-repeat;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /*background-image: url() ;*/
+        
+
+            }
+
+            #background {
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            .topo {
+                padding: 10px 20px;   
+                background-color: rgb(0, 0, 0);
+                background-image: linear-gradient(rgba(0,0,0,.6),#121212);
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                box-sizing: border-box;
+                height: 60px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 99;
+            }
+
+            .container {
+                width: 32vw;
+                min-width: 500px;
+                padding: 20px;
+                background-color: black;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0,0,0,1);
+            }
+            label   {
+ 
+            }
+            label input{
+                display:none;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .form-group label {
+                color: white;
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+
+            }
+
+            .form-group input {
+                width: 60%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+
+            }
+
+            .form-group #first{
+                position:relative;
+                display:block;
+                width:1.41cm;
+                height:0.70cm;
+                background:black;
+                border:3px solid #404040;
+                border-radius:15px;
+                transition:300ms;
+                margin-bottom:10px;
+                cursor:pointer;
+                }
+
+            .form-group #last{
+                position:absolute;
+                width:0.85cm;
+                height:0.90cm;
+                background:#a0a0a0;
+                border-radius:100%;
+                left:-3px;
+                top:-4px;
+                transition:300ms;
+                cursor:pointer;
+            }
+
+            .form-group label input[type=checkbox]:checked + #first>#last{
+                left:25px;
+                background:#fff;
+                transition:300ms;
+                }
+
+
+            .form-group label input[type=checkbox]:checked + #first{
+                background:#1db954;
+                border:3px solid transparent;
+                transition:300ms;
+            }
+
+            .form-group button {
+                background-color: #1ed760;
+                color: #000000;
+                font-size: 16px;
+                font-weight: bold;
+                padding: 14px 130px;
+                border: 0px;
+                border-radius: 40px;
+                cursor: pointer;
+                margin-left: 20px;
+                }
+
+            .error-message {
+                color:#1db954;
+            }
+
+            .success-message {
+                color: white;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="background">
+
+            <div class="topo">
+
+
+            </div>
+
+            <div class="container">
+                <h2>Entrar no Spotfluxo</h2>
+                <form id="contact-form" action="#" method="post">
+
+                    <div class="form-group">
+                        <label for="email">Email ou nome de usuário:</label>
+                        <input type="text" id="email" name="email" placeholder="Email ou nome de usuário" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" placeholder="Senha" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label> 
+                            <input type="checkbox" id="checkbox" name="checkbox"/>
+                            <span id="first">
+                                <span id="last"></span>
+                            </span>
+                            Lembrar de mim 
+                        </label>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit">Entrar</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+
+        <script>
+
+            var form=document.getElementById("contact-form");
+
+            form.addEventListener("submit",function(event){
+                event.preventDefault();
+                var email= document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+                var checkbox = document.getElementById("checkbox").checked;
+
+                if(email=== "" || password=== ""){
+                    var errorMessage = document.createElement("p");
+                    errorMessage.textContent = "Preencha todos os campos.";
+                    errorMessage.classList.add("error-message");
+                    form.appendChild(errorMessage);
+                }
+                else {
+                    var successMessage = document.createElement("p");
+                    successMessage.textContent = "Login efetuado com sucesso";
+                    successMessage.classList.add("success-message");
+                    form.appendChild(successMessage)
+                }
+
+                var userInfo = "Email ou nome de usuario:" + email + "\nSenha: " + "\nLembrar de mim: " +checkbox;
+                alert(userInfo)
+
+
+
+            });
+
+        </script>
+
+
+
+    </body>
+
+
+
+
+
+
+
+
+</html>
