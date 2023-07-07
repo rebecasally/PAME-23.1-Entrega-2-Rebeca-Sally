@@ -22,6 +22,7 @@
             }
 
             #background {
+                /*estilo do div de fundo*/
                 margin-top:35vh;
                 margin-bottom: 30vh;
                 height: 100vh;
@@ -37,6 +38,7 @@
             }
 
             .bg-img {
+                /* estilo da imagem de fundo */ 
                 height: 100vh;
                 width: 100vw;
                 position: fixed;
@@ -54,6 +56,7 @@
             }
 
             .topo {
+                /*estilo da barra de cima*/
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -69,6 +72,7 @@
             }
 
             .circle{
+                /*estilo do círculo da logo do spotify*/
                 margin-left: 10px;
                 width: 33px;
                 height: 33px;
@@ -77,10 +81,12 @@
                 }
 
             .circle img {
+                /*estilo da logo*/
                 height: 34px;
             }
 
             #texto {
+                /*estilo do texto abaixo do formulário*/
                 margin-left: 7px;
                 font-weight: bold;
                 color:#fff;
@@ -88,6 +94,7 @@
             }
 
             .container {
+                /*estilo do bloco preto com os componentes*/
                 width: 32vw;
                 min-width: 300px;
                 padding: 20px;
@@ -110,6 +117,7 @@
             }
 
             .horizontal-line{
+               /*estilo da linha cinza entre as seções*/ 
                 border: 1px solid #414141;
                 border-radius: 10px;
                 width: 90%;
@@ -119,6 +127,7 @@
             }
 
             .link {
+                /*estilo dos links*/
                 color:#fff;
                 font-weight: bold;
                 text-decoration: underline;
@@ -129,18 +138,21 @@
             }
 
             a {
+                /*remove a decoração da tag a
+                os links vísiveis utilizam o estilo "links"*/
                 text-decoration: none;
                 color: rgba(0, 0, 0, 0);
                 }
 
             .link-bottom {
+                /*link sublinhado*/
                 color:#fff;
                 font-weight: bold;
                 text-decoration: underline;
             }
 
             #eye {
-                color:#1ed760;
+                /*define a posição da imagem de ocultar/mostrar senha*/
                 position:relative;
                 left:268px;
                 bottom:59px;
@@ -151,6 +163,7 @@
             }
 
             #eye-checkbox input[type="checkbox"] {
+                /*deixa a checkbox invisível por baixo da imagem do olho*/
                 -webkit-appearance: none;
                 -o-appearance: none;
                 -moz-appearance: none;
@@ -172,7 +185,9 @@
                 font-weight: 900;
                 }
 
+
             .social {
+                /*estilo dos botões de rede social*/
                 color:#fff;
                 height: 7vh;
                 width: 20vw;
@@ -281,7 +296,6 @@
             }
 
             .form-group input {
-                
                 align-self: center;
                 width: 80%;
                 padding: 10px;
@@ -293,6 +307,7 @@
             }
 
             .form-group #first{
+                /*estilo do botão de lembrar de mim*/
                 position:relative;
                 display:block;
                 width:1cm;
@@ -306,6 +321,7 @@
                 }
 
             .form-group #last{
+                /*estilo do botão de lembrar de mim, após o click*/
                 position:absolute;
                 width:0.6cm;
                 height:0.6cm;
@@ -331,6 +347,7 @@
             }
 
             .form-group button {
+                /*estilo do botão*/
                 background-color: #1ed760;
                 color: #000000;
                 font-size: 16px;
@@ -448,8 +465,9 @@
         </body>
 
 
-        <script>
 
+        <script>
+            //função para mostrar ou ocultar a senha
             function myFunction() {
                 var x = document.getElementById("password");
                 if (x.type === "password") {
